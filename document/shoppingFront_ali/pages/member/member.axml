@@ -1,0 +1,64 @@
+<view class="wrap">
+  <view class="user_logon">
+    <view class="userinfo">
+      <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
+      <text class="userinfo-nickname" style="color: #93cfc5">{{nickName}}</text>
+    </view>
+  </view>
+  <view class="list_box1">
+    <view class="top">
+      <navigator url="/pages/order/order?status=-1">
+        <view class="first" style="border-bottom:none">
+          <view class="my_resume left">            全部订单          </view>
+          <view class="right">
+            <image src="../../images/settingPic/jiantou_tou.png"></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class='funcs'>
+    <view class='func' a:for="{{functions}}" a:for-item="item" onTap="bindOrderListViewTap" data-status="{{item.status}}">
+      <image src="{{item.url}}" mode="scaleToFill"></image>
+      <view class='name'>{{item.name}}</view>
+    </view>
+  </view>
+  <view class="list_box">
+    <view class="top">
+      <navigator url="/pages/mycricleorder/mycricleorder?status=-1">
+        <view class="first" style="border-bottom:none">
+          <view class="my_resume left">            我的袋子          </view>
+          <view class="right">
+            <image src="../../images/settingPic/jiantou_tou.png"></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view class="middle">
+      <navigator url="/pages/addAddress/addAddress?isFromOrder=' + 2">
+        <view bindtap="collect" class="dingyue" style="border-bottom:none">
+          <view class="left">我的地址</view>
+          <view class="right">
+            <image class="image2" src="../../images/settingPic/jiantou_tou.png"></image>
+          </view>
+        </view>
+      </navigator>
+      <navigator url="/pages/collectGood/collectGood">
+        <view class="dingyue none_bottom">
+          <view class="left">我的收藏</view>
+          <view class="right">
+            <image class="image2" src="../../images/settingPic/jiantou_tou.png"></image>
+          </view>
+        </view>
+      </navigator>
+      <navigator  url="/pages/watchPerson/watchPerson">
+        <view class="dingyue none_bottom">
+          <view class="left">我的关注</view>
+          <view class="right">
+            <image class="image2" src="../../images/settingPic/jiantou_tou.png"></image>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

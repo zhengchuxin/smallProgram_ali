@@ -1,0 +1,22 @@
+<view class='bottomview'>
+  <view class="no-cart" a:if="{{!functions.length && functions}}">
+    <view class="c">
+      <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+      <text>去添加点什关注咯</text>
+    </view>
+  </view>
+  <view class="cart-view" a:else>
+    <view>
+      <text class='person'>关注的人</text>
+    </view>
+    <view>
+      <view class='funcs'>
+        <view class='func' a:for="{{functions}}" a:for-item='item' a:key="unique">
+          <image src="{{item.avatar}}" mode="aspectFill" data-followuserid="{{item.followUserId}}" onTap='pushCircleClick'></image>
+          <view class='name'>{{item.nickName}}</view>
+          <view class='namewatch' data-followuserid="{{item.followUserId}}" onTap='cancelwatchClick'>取消关注</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

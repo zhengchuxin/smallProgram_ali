@@ -1,0 +1,50 @@
+<view>
+  <view class="orders-switch">
+    <view class="item {{ showType == 0 ? 'active' : ''}}" onTap="switchTab" data-index='0'>
+      <view class="txt">全部</view>
+    </view>
+    <view class="item {{ showType == 1 ? 'active' : ''}}" onTap="switchTab" data-index='1'>
+      <view class="txt">待付款</view>
+    </view>
+    <view class="item {{ showType == 2 ? 'active' : ''}}" onTap="switchTab" data-index='2'>
+      <view class="txt">待发货</view>
+    </view>
+    <view class="item {{ showType == 3 ? 'active' : ''}}" onTap="switchTab" data-index='3'>
+      <view class="txt">已发货</view>
+    </view>
+    <view class="item {{ showType == 4 ? 'active' : ''}}" onTap="switchTab" data-index='4'>
+      <view class="txt">已收货</view>
+    </view>
+  </view>
+  <view class="no-order" a:if="{{!orderList.length && orderList}}">
+    <view class="c">
+      <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+      <text>还没有任何订单呢</text>
+    </view>
+  </view>
+  <view class="orders">
+    <navigator url="/pages/mycricleorderDetail/mycricleorderDetail?orderNum={{item.orderNum}}" class="order" a:for="{{orderList}}" a:key="id" data-ordernum="{{item.orderNum}}">
+      <view class="h">
+        <view class="l">订单编号：{{item.orderNum}}</view>
+        <view class="r" a:if="{{item.status == 0}}">未付款</view>
+        <view class="r" a:if="{{item.status == -9}}">已取消</view>
+        <view class="r" a:if="{{item.status == 1}}">已付款待发货</view>
+        <view class="r" a:if="{{item.status == 2}}">已发货</view>
+        <view class="r" a:if="{{item.status == 3}}">已收货</view>
+      </view>
+      <view class="goods" a:for="{{item.itemList}}" a:key="id" a:for-item="gitem">
+        <view class="img">
+          <image src="{{gitem.cover}}"></image>
+        </view>
+        <view class="info">
+          <text class="name">{{gitem.name}}</text>
+          <text class="number">共{{gitem.quantity}}件商品</text>
+        </view>
+        <view class="status"></view>
+      </view>
+      <view class="b">
+        <view class="l">实付：￥{{item.realAmount}}</view>
+      </view>
+    </navigator>
+  </view>
+</view>

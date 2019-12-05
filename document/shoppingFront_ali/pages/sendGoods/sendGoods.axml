@@ -1,0 +1,21 @@
+<view class="top">
+  <view class="leftCategory" onTap='bindPickerChange'>
+    <picker onChange="bindPickerChange" value="{{index}}" range="{{catrgoryArray}}" range-key="{{'name'}}">
+      <view class="picker" a:if="{{index > 0}}">
+        <text>物流公司：{{catrgoryArray[index].name}}</text>
+      </view>
+      <view class="picker" a:else>
+        <text>物流公司：{{catrgoryArray[0].name}}</text>
+      </view>
+    </picker>
+  </view>
+  <view bindtap="data_back" class="dingyue">
+    <view class="left">
+      <text>*</text>快递号  
+    </view>
+    <view class="right">
+      <input name="company_name_cn" onInput="titlechanged" placeholder="请输入快递编号" />
+    </view>
+  </view>
+  <button class="submit-btn" type="default" loading="{{loading}}" onTap="formSubmitBottom" style="background-color: {{btnBgc}}">发货</button>
+</view>

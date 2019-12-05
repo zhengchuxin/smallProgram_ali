@@ -1,0 +1,100 @@
+<view class="allTop">
+  <!--左上角小图标，自己才显示-->
+  <block a:if="{{myself == 1 }}">
+    <view class="topleft" onTap="closeSearch" animation="{{animationData2}}">
+      <image class="baseimg" src="../../images/icon/ditu.png" mode="scaleToFill" catchtap="closeSearch"></image>
+    </view>
+  </block>
+  <!--背景小图标-->
+  <view class="bg">
+    <!-- <image class="baseimg" src="../../images/icon/bg.jpg" mode="scaleToFill"></image>  -->
+  </view>
+  <!--背景图底部大头像-->
+  <view class="headimg">
+    <image class="baseimg" src="{{userInfo.avatar}}" mode="scaleToFill"></image>
+  </view>
+  <!--背景图底部昵称-->
+  <view class="nickname">
+    <text>{{userInfo.nickName}}</text>
+  </view>
+  <!--占位行-->
+  <view class="lie"></view>
+  <view class="content" a:for="{{resultData}}" a:for-index="k">
+    <!--头像-->
+    <view class="head">
+      <image class="baseimg" src="{{resultData[k].avatar}}" mode="scaleToFill"></image>
+    </view>
+    <!--昵称-->
+    <view class="wz">
+      <view>
+        <text>{{resultData[k].nickName}}</text>
+      </view>
+      <view>
+        <text class="gz" data-userid="{{resultData[k].userId}}" a:if="{{resultData[k].isFollowed == 0 && resultData[k].isSelf == 0}}" onTap="watchClcik">关注</text>
+      </view>
+    </view>
+    <!--内容-->
+    <view class="desc">
+      <text>{{resultData[k].content}}</text>
+    </view>
+    <block a:if="{{resultData[k].coverList != 'null'}}">
+      <view class="images-wrapper">
+        <view class='bigimg'>
+          <image style="width: 580rpx;height: 580rpx; padding-top: 5rpx;" src="{{resultData[k].coverList[0]}}" class="images-image" data-src="{{image}}" data-count="{{resultData[k].coverList}}" onTap="previewImage"></image>
+        </view>
+        <view class='plays'>
+          <image style="width: 100rpx;height: 100rpx; padding-top:15rpx; padding-left:15rpx" src="../../images/icon/play.png" data-src="{{image}}" data-count="{{resultData[k].coverList}}" onTap="previewImage"></image>
+        </view>
+      </view>
+    </block>
+    <view class='detailpic'>
+      <view a:for="{{resultData[k].items}}" a:for-index="kk" a:if="{{showMore || kk < 3}}">
+        <view class='detailpics' onTap="bindViewTapTheme" data-itemid="{{resultData[k].items[kk].itemId}}">
+          <view>
+            <image src="{{resultData[k].items[kk].coverList[0]}}" class="images-image" data-src="{{image}}" data-count="{{resultData[k].items[kk].coverList}}"></image>
+          </view>
+          <view class='price'>
+            <text style="color:green" src="../../images/icon/ic_red_dollar.png" a:if="{{status == true}}"> ¥{{resultData[k].items[kk].price}}</text>
+            <text style="color:red" src="../../images/icon/ic_red_dollar.png" a:if="{{status == false}}"> ¥{{resultData[k].items[kk].price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='more' a:if="{{resultData[k].items.length > 3}}" onTap='goodsmore'>
+        <image src="../../images/icon/more.png"></image>
+      </view>
+    </view>
+    <!--显示地址-->
+    <block a:if="{{resultData[k].createDate != 'undefined'}}">
+      <text class="address">{{resultData[k].address}}</text>
+    </block>
+    <!--显示发布时间-->
+    <!-- <text class="time">{{resultData[k].createDate}}</text> -->
+    <text class="time">{{"2小时前"}}</text>
+    <!--显示删除-->
+    <block a:if="{{resultData[k].isSelf == 1 }}">
+      <block a:if="{{myself == 1 }}">
+        <text class="dele" onTap="bindDele" data-deleuserid="{{resultData[k].userId}}" data-circleid="{{resultData[k].circleId}}">删除</text>
+        <text a:if="{{resultData[k].hide == 1}}" class="show" onTap="bindshow" data-deleuserid="{{resultData[k].userId}}" data-circleid="{{resultData[k].circleId}}">显示</text>
+        <text a:if="{{resultData[k].hide == null}}" class="show" onTap="bindhide" data-deleuserid="{{resultData[k].userId}}" data-circleid="{{resultData[k].circleId}}">隐藏</text>
+        <text a:if="{{resultData[k].hide == 0}}" class="show" onTap="bindhide" data-deleuserid="{{resultData[k].userId}}" data-circleid="{{resultData[k].circleId}}">隐藏</text>
+      </block>
+    </block>
+    <!--显示操作小图标-->
+    <view class="biao">
+      <image class="baseimg" src="../../images/icon/good.png" onTap="bindCaoZuo" data-circleid="{{resultData[k].circleId}}"></image>
+    </view>
+    <view class="biao">
+      <text>{{resultData[k].praises}}</text>
+    </view>
+  </view>
+  <!--点赞评论标签-->
+  <view class="caozuo" style="top:{{cz_top}}px;right:{{cz_right}}rpx;" animation="{{animationData}}">
+    <text class="dianzan" onTap="bindDianZan">点赞</text>
+  </view>
+  <!-- <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <block a:for="{{actionSheetItems}}" a:key="*this">
+      <action-sheet-item class="item" onTap="bindItemTap" data-name="{{item}}" data-index="{{index}}">{{item}}</action-sheet-item>
+    </block>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet> -->
+</view>

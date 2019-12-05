@@ -1,0 +1,94 @@
+.cart-view {
+    width: 750rpx;
+}
+.bottomview {
+  padding-top: 0rpx;
+}
+.person {
+  padding-left: 20rpx;
+  font-size: 35rpx;
+  color: red;
+}
+
+.funcs {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20rpx 0 0rpx 0;
+}
+
+.funcs .func {
+  width: 25%;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+
+.funcs .func image {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+}
+
+.funcs .func .name {
+  text-align: center;
+  color: #666;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+
+.funcs .func .namewatch {
+  text-align: center;
+  color: white;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  padding-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 10rpx;
+  background-color: red;
+  width: 140rpx;
+  border-radius: 30rpx;
+  height: 44rpx;
+}
+
+.no-cart{
+    width: 750rpx;
+    height: auto;
+    margin: 0 auto;
+}
+
+.no-cart .c{
+    width: 100%;
+    height: auto;
+    margin-top: 200rpx;
+}
+
+.no-cart .c image{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: 258rpx;
+    height: 258rpx;
+}
+
+.no-cart .c text{
+    margin: 0 auto;
+    display: block;
+    width: 258rpx;
+    height: 29rpx;
+    line-height: 29rpx;
+    text-align: center;
+    font-size: 29rpx;
+    color: #999;
+}
+
+.name {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}

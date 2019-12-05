@@ -1,0 +1,71 @@
+<view class="container">
+  <view class="no-login" a:if="{{!hasLogin}}">
+    <view class="c">
+      <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+      <text>还没有登录</text>
+      <button type="primary" plain="true" onTap="goLogin">去登录</button>
+    </view>
+  </view>
+  <view class='login' a:else>
+    <view class="no-cart" a:if="{{!cartGoods.length && cartGoods}}">
+      <view class="c">
+        <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+        <text>去添加点什么吧</text>
+      </view>
+      <view class="look" onTap="goToCircle">
+        <text>去袋子逛逛吧</text>
+      </view>
+
+      <view class='bottomview'>
+        <view>
+          <text class='person'>推荐关注的人</text>
+        </view>
+        <view>
+          <view class='funcs'>
+            <view class='func' a:for="{{functions}}" a:for-item='item' a:key="unique">
+              <image src="{{item.avatar}}" mode="aspectFill" onTap='pushCircleClick'></image>
+              <view class='name'>{{item.nickName}}</view>
+              <view class='namewatch' onTap='watchClick'>关注</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cart-view" a:else>
+      <view class="list">
+        <view class="group-item">
+          <view class="goods">
+            <view class="item {{isEditCart ? 'edit' : ''}}" a:for="{{cartGoods}}" a:key="id">
+              <view class="checkbox {{item.checked ? 'checked' : ''}}" onTap="checkedItem" data-item-index="{{index}}"></view>
+              <view class="cart-goods" onTouchStart="mytouchstart" onTouchEnd="mytouchend" onLongTap="editAddress" data-cartid="{{item.cartId}}">
+                <image class="img" src="{{item.cover}}"></image>
+                <view class="info">
+                  <view class="t">
+                    <text class="name">{{item.itemName}}</text>
+                    <!-- <text class="num">x{{item.quantity}}</text> -->
+                  </view>
+                  <view class="attr">{{ isEditCart ? '已选择:' : ''}}{{item.goodsSpecificationValues||''}}</view>
+                  <view class="b">
+                    <text class="price">￥{{item.price}}</text>
+                    <view class="selnum">
+                      <view class="cut" onTap="cutNumber" data-item-index="{{index}}" data-item-itemId="{{itemId}}">-</view>
+                      <input value="{{item.quantity}}" class="number" disabled="true" type="number" />
+                      <view class="add" onTap="addNumber" data-item-index="{{index}}">+</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+      <view class="cart-bottom">
+        <view class="checkbox {{checkedAllStatus ? 'checked' : ''}}" onTap="checkedAll">全选</view>
+        <view class="total">{{!isEditCart ? '￥'+checkedGoodsAmount : ''}}</view>
+        <view class="checkout" onTap="checkoutOrder" a:if="{{!isEditCart}}">结算</view>
+      </view>
+    </view>
+  </view>
+</view>

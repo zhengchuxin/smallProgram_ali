@@ -1,0 +1,182 @@
+page {
+  background-color: #efefef;
+}
+
+.box {
+  background: white;
+  width: 750rpx;
+}
+
+.shuru {
+  /*border:1px solid red;*/
+  overflow: hidden;
+  background: #fff;
+}
+
+.shuru1 {
+  width: 100%;
+  height: 150rpx;
+  /*border:1px solid red;*/
+  background: #fff;
+  margin-top: 30rpx;
+  margin-left: 80rpx;
+  margin-right: 80rpx;
+}
+
+.action {
+  padding-top: 10px;
+}
+
+.action .action-photo {
+  background-color: #fff;
+  padding: 40rpx 0px 40rpx 50rpx;
+}
+
+.action .action-photo image {
+  position: relative;
+  display: inline-block;
+  width: 160rpx;
+  height: 160rpx;
+  overflow: visible;
+  margin-left: 25rpx;
+}
+
+.action .action-photo image icon.del {
+  display: block;
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+}
+
+.action .action-photo text.add {
+  display: inline-block;
+  width: 120rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ccc;
+  border: 2rpx dotted #ccc;
+  margin-left: 25rpx;
+  vertical-align: top;
+}
+
+.address {
+  margin-top: 60rpx;
+  height: 140rpx;
+  background: #fff;
+  width: 70%;
+  border-bottom: 1px solid #ccc;
+}
+
+.biao {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 50rpx;
+  margin-top: 20rpx;
+}
+
+.cat {
+  margin-top: -100rpx;
+  width: 260rpx;
+  height: 260rpx;
+  margin-right: -180rpx;
+  float: right;
+}
+
+.weizhi {
+  position: absolute;
+  width: 350rpx;
+  height: 30px;
+  /*border:1px solid red;*/
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+  color: #999;
+}
+
+.caozuo {
+  height: 210rpx;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-top: 80rpx;
+  background: #fff;
+}
+
+.add-address {
+  background: #f60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 99rpx;
+  position: fixed;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  font-size: 34rpx;
+  top: 525rpx;
+  flex-direction: column;
+  right: 2%;
+}
+
+.buttona {
+  background: #cfcf5a;
+  width: 600rpx;
+  height: 88rpx;
+  color: #fff;
+  font-size: 14pt;
+  margin-top: 200rpx;
+  margin-left: 80rpx;
+  line-height: 40px;
+  position: fixed;
+}
+
+.images-wrapper {
+  padding: 20rpx;
+  background-color: #fff;
+  /*margin-top: 20rpx;*/
+}
+
+.images-wrapper-text {
+  font-size: 28rpx;
+}
+
+.images-list {
+  display: flex;
+  margin-top: 20rpx;
+  flex-wrap: wrap;
+}
+
+.images-image {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+
+.image-plus {
+  border: 1px solid #999;
+  position: relative;
+}
+
+.image-plus-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #d9d9d9;
+  width: 4rpx;
+  height: 80rpx;
+  transform: translate(-50%, -50%);
+}
+
+.image-plus-vertical {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #d9d9d9;
+  width: 80rpx;
+  height: 4rpx;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,40 @@
+<view class="top"> 
+  <view class="no-cart" a:if="{{!list.length}}">
+    <view class="c">
+      <image src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/noCart-a8fe3f12e5.png" />
+      <text>没商品可看咯</text>
+    </view>
+  </view>
+  <view class="cart-view" a:else>
+    <view class='hotgoodcontainer'>
+      <view class="llll" onTap='bindViewTapTheme' a:for="{{list}}" a:for-index="idx" a:for-item="good" a:key="*this" data-itemid="{{good.itemId}}">
+        <image style="width: 60px;height: 60px;margin: 25rpx; border: 0.5px solid #e2e2e3;" src='{{good.cover}}'></image>
+        <view class="eeee">
+          <view style="margin:5px;font-size:35px; padding-top:15rpx;">
+            <text class='detailtexttitle'>{{good.title}}</text>
+          </view>
+          <view style="margin:5px;font-size:11px">
+            <text class='detailtext'>{{good.content}}</text>
+          </view>
+        </view>
+        <view class='right'>
+          <view style="font-size:13px; padding-top: 30rpx;">
+            <image style="width: 13px;height: 13px;" src="../../images/icon/ic_red_dollar.png"></image>{{good.price}}                    
+          </view>
+          <view style="font-size:13px; padding-top: 30rpx;">
+            <image style="width: 13px;height: 13px;" src="../../images/icon/action.png"></image>{{good.locationName}}          
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="tips1">
+      <view a:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+        <icon type="waiting" size="20" />
+        <text>玩命的加载中...</text>
+      </view>
+      <view a:else style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+        <text style="padding-top: 30rpx">没有更多商品了</text>
+      </view>
+    </view>
+  </view>
+</view>

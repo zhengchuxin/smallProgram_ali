@@ -1,0 +1,126 @@
+<view class="box">
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="shuru">
+      <textarea class="shuru1" placeholder="臣，听旨！" placeholder-style="font-size:28rpx;" name="content" />
+    </view>
+    <view class="action">
+      <view class="action-photo">
+        <block a:for="{{picUrls}}" a:key="{{item}}" a:index="{{index}}">
+          <image src="{{item}}">
+            <icon type="cancel" data-index="{{index}}" color="red" size="18" class="del" bindtap="delPic" />
+          </image>
+        </block>
+        <text class="add" onTap="bindCamera" a:if="{{picUrls.length < 4}}">{{actionText}}
+        </text>
+      </view>
+    </view>
+    <view class="address">
+      <view onTap="bindAddress">
+        <image class="biao" src="../../images/icon/address.png" mode="aspectFit"></image>
+        <text class="weizhi">{{addRessName?addRessName:'所在位置'}}                
+          <input name="address" value="{{addRessName}}" type='text'/>
+        </text>
+        <image class="cat" src="../../images/icon/cat.png" mode="aspectFit"></image>
+      </view>
+    </view>
+    <view class="add-address" bindtap="orderAdd">发单</view>
+    <button class="buttona" form-type="submit">传旨</button>
+    <!-- <view class="wx-popup" hidden="{{flag}}">
+      <view class='backCol'>
+        <view class="toptip">
+          <view class='topleft'>
+            <text>新增商品</text>
+          </view>
+          <view class='topright'>
+            <image style="width: 40px;height: 40px; margin-right: 30rpx" src="../../images/icon/tanceicon.png"></image>
+          </view>
+        </view>
+        <view class="middle">
+          <view bindtap="data_back" class="dingyue">
+            <view class="left">              商品分类            </view>
+            <view class="right" bindtap='bindPickerChange'>
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{catrgoryArray}}" range-key="{{'categoryName'}}">
+                <view class="picker" wx:if="{{index > 0}}">                  {{catrgoryArray[index].categoryName}}                </view>
+                <view class="picker" wx:else>                  {{catrgoryArray[0].categoryName}}                </view>
+              </picker>
+            </view>
+          </view>
+          <view bindtap="data_back" class="dingyue">
+            <view class="left">              标题            </view>
+            <view class="right">
+              <input name="company_name_cn" bindinput="titlechanged" placeholder="请输入标题" />
+            </view>
+          </view>
+          <view bindtap="data_back" class="dingyue">
+            <view class="left">              商品价格            </view>
+            <view class="right">
+              <input name="company_name_cn" bindinput="pricechanged" placeholder="请输入价格" type='digit' />
+            </view>
+          </view>
+          <view bindtap="data_back" class="dingyue">
+            <view class="left">              商品描述            </view>
+            <view class="right">
+              <input name="company_name_cn" bindinput="descriplechanged" placeholder="请输入商品内容" />
+            </view>
+          </view>
+          <view bindtap="showDatePickerPlus" class="dingyue">
+            <view class="left">              截止时间            </view>
+            <view class="right">
+              <text>{{dateInfo.dateStr ? dateInfo.dateStr : '请选择截止时间'}}</text>
+            </view>
+          </view>
+          <datepicker-plus bind:submit='submit' showDatePickerPlus='{{show}}'></datepicker-plus>
+          <view bindtap="data_back" class="dingyue">
+            <view class="left">              代购地址            </view>
+            <view class="right" bindtap='showAreaPickerPlus'>
+              <picker bindchange="bindAreaPickerChange" value="{{indexarea}}" range="{{areaArray}}" range-key="{{'name'}}">
+                <view class="picker" wx:if="{{indexarea > 0}}">                  {{areaArray[indexarea].name}}                </view>
+                <view class="picker" wx:else>                  {{areaArray[0].name}}                </view>
+              </picker>
+            </view>
+          </view>
+        </view>
+        <view class="actionbottom">
+          <view class="title">图片上传</view>
+          <view class="actionbottom-photo">
+            <block wx:for="{{picUrlsBottom}}" wx:key="{{item}}" wx:index="{{index}}">
+              <image src="{{item}}">
+                <icon type="cancel" data-index="{{index}}" color="red" size="18" class="del" bindtap="delPicBottom" />
+              </image>
+            </block>
+            <text class="add" bindtap="bindCameraBottom" wx:if="{{picUrlsBottom.length < 4}}">{{actionText}}
+            </text>
+          </view>
+        </view>
+        <button class="submit-btn" bindtap="formSubmitBottom" style="background-color: #cfcf5a; color:white">确定</button>
+      </view>
+      <image class="closebtn" bindtap="closebtn" src="../../images/icon/delete.png"></image>
+      <view class='totalnumber'>{{totalcount}}</view>
+    </view>
+    <view class="wx-popup" hidden="{{continueflag}}">
+      <view class='backColor'>
+        <view class="toptip">
+          <view class='topleft'>
+            <text>新增商品</text>
+          </view>
+          <view class='topright'>
+            <image style="width: 40px;height: 40px; margin-right: 30rpx" src="../../images/icon/tanceicon.png"></image>
+          </view>
+        </view>
+        <view class='addsucess'>
+          <view class='detailsucess'>
+            <view>
+              <image style="width: 300rpx;height: 300rpx; margin-top: 100rpx;margin-left: 200rpx" src="../../images/icon/tipmessage.png"></image>
+            </view>
+            <view>
+              <text style="font-size:28rpx">添加成功！</text>
+            </view>
+          </view>
+        </view>
+        <button class="cancel" bindtap="cancel" style="background-color: #999999; color:#333333">取消</button>
+        <button class="confirm" bindtap="confirm" style="background-color: #cfcf5a; color:white">继续添加</button>
+      </view>
+      <view class='totalnumber'>{{totalcount}}</view>
+    </view> -->
+  </form>
+</view>
