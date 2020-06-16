@@ -1,0 +1,117 @@
+<van-tabs active="{{active}}" bind:click="onClick" swipe-threshold:5>
+  <van-tab title="全部">
+    <view class="orderDetails" wx:for="{{alreadyOrder}}" wx:key="index"  bindtap='toOrderdetail'>
+      <view class="orderListTitle">
+        <text class="userName">订单号：{{item.order}}</text>
+        <text class="orderStatus">{{item.state}}</text>
+      </view>
+      <view class="orderListDetails">
+        <view class="productImg">
+          <image src="{{item.url}}" background-size="cover"></image>
+        </view>
+        <view class="productInfo">
+          <text class="productPrice">{{item.name}}</text>
+          <view class="productTitle">{{item.desc}}</view>
+          <view class="productTitle">下单时间: {{item.time}}</view>
+        </view>
+      </view>
+      <view class="productCount">
+        <view>
+          <text>合计：￥{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="待付款">
+    <view class="orderDetails" wx:for="{{waitPayOrder}}" wx:key="index" bindtap='toOrderdetail'>
+      <view class="orderListTitle">
+        <text class="userName">订单号：{{item.order}}</text>
+        <text class="orderStatus">{{item.state}}</text>
+      </view>
+      <view class="orderListDetails">
+        <view class="productImg">
+          <image src="{{item.url}}" background-size="cover"></image>
+        </view>
+        <view class="productInfo">
+          <text class="productPrice">{{item.name}}</text>
+          <view class="productTitle">{{item.desc}}</view>
+          <view class="productTitle">下单时间: {{item.time}}</view>
+        </view>
+      </view>
+      <view class="productCount">
+        <view>
+          <text>合计：￥{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="待配送">
+    <view class="orderDetails" wx:for="{{waitSendOrder}}" wx:key="index" bindtap='toOrderdetail'>
+      <view class="orderListTitle">
+        <text class="userName">订单号：{{item.order}}</text>
+        <text class="orderStatus">{{item.state}}</text>
+      </view>
+      <view class="orderListDetails">
+        <view class="productImg">
+          <image src="{{item.url}}" background-size="cover"></image>
+        </view>
+        <view class="productInfo">
+          <text class="productPrice">{{item.name}}</text>
+          <view class="productTitle">{{item.desc}}</view>
+          <view class="productTitle">下单时间: {{item.time}}</view>
+        </view>
+      </view>
+      <view class="productCount">
+        <view>
+          <text>合计：￥{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="待收货">
+    <view class="orderDetails" wx:for="{{waitReceiveOrder}}" wx:key="index" bindtap='toOrderdetail'>
+      <view class="orderListTitle">
+        <text class="userName">订单号：{{item.order}}</text>
+        <text class="orderStatus">{{item.state}}</text>
+      </view>
+      <view class="orderListDetails">
+        <view class="productImg">
+          <image src="{{item.url}}" background-size="cover"></image>
+        </view>
+        <view class="productInfo">
+          <text class="productPrice">{{item.name}}</text>
+          <view class="productTitle">{{item.desc}}</view>
+          <view class="productTitle">下单时间: {{item.time}}</view>
+        </view>
+      </view>
+      <view class="productCount">
+        <view>
+          <text>合计：￥{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="已完成">
+    <view class="orderDetails" wx:for="{{waitFinishOrder}}" wx:key="index" bindtap='toOrderdetail'>
+      <view class="orderListTitle">
+        <text class="userName">订单号：{{item.order}}</text>
+        <text class="orderStatus">{{item.state}}</text>
+      </view>
+      <view class="orderListDetails">
+        <view class="productImg">
+          <image src="{{item.url}}"></image>
+        </view>
+        <view class="productInfo">
+          <text class="productPrice">{{item.name}}</text>
+          <view class="productTitle">{{item.desc}}</view>
+          <view class="productTitle">下单时间: {{item.time}}</view>
+        </view>
+      </view>
+      <view class="productCount">
+        <view>
+          <text>合计：￥{{item.money}}</text>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>

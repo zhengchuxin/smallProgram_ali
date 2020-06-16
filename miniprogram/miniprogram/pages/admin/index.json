@@ -1,0 +1,17 @@
+{
+  "usingComponents": {
+    "van-icon": "/miniprogram_npm/vant-weapp/icon/index",
+    "van-notice-bar": "/miniprogram_npm/vant-weapp/notice-bar/index",
+    "van-loading": "/miniprogram_npm/vant-weapp/loading/index",
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+    "van-stepper": "/miniprogram_npm/vant-weapp/stepper/index",
+    "van-badge-group": "/miniprogram_npm/vant-weapp/badge-group/index",
+    "van-field": "/miniprogram_npm/vant-weapp/field/index",
+    "van-cell-group": "/miniprogram_npm/vant-weapp/cell-group/index",
+    "van-cell": "/miniprogram_npm/vant-weapp/cell/index",
+    "van-switch-cell": "/miniprogram_npm/vant-weapp/switch-cell/index",
+    "van-radio": "/miniprogram_npm/vant-weapp/radio/index",
+    "van-radio-group": "/miniprogram_npm/vant-weapp/radio-group/index"
+  },
+  "navigationBarTitleText": "后台管理"
+}

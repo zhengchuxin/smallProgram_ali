@@ -1,0 +1,17 @@
+
+<view class="S_pannel contact">
+  <p class="S_title right_icon go_link">
+    退货商品
+  </p>
+  <van-card num="2" tag="新鲜" origin-price="32.00" price="20.00" desc="酸甜可口" title="苹果" thumb="{{imgUrl}}">
+  </van-card>
+</view>
+
+<view style="height:5px; width:100%;background:#f0f0f0"></view>
+
+<textarea style="width:90%;margin-left:5%;margin-top:10px;height:80px;border:solid 1px #c6ab70; border-radius:5px;font-size:13px;" placeholder="输入退货原因：">
+</textarea>
+
+<button style="width:90%; margin-left:5%; background:#c6ab70; height:40px;color:white;margin-top:10px;">确认提交</button>
+
+<!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" /> -->

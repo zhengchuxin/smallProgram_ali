@@ -1,0 +1,11 @@
+<van-cell-group>
+  <van-cell title="头像" is-link value="" />
+  <van-cell title="姓名" is-link value="刘德华" />
+  <van-cell title="会员码" is-link value="" />
+  <van-cell title="手机号" is-link value="13987888888" />
+  <van-cell title="性别" is-link value="男" />
+  <van-cell title="生日" is-link value="2011-08-08" />
+  <van-cell title="地区" is-link value="广东省深圳 " />
+  <van-cell title="微信号" is-link value="大兵 "  />
+  <van-cell title="收货地址" is-link link-type="navigateTo" url="/pages/pay/address/index" />
+</van-cell-group>

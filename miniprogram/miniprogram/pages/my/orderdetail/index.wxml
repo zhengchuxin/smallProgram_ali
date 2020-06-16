@@ -1,0 +1,40 @@
+<view class="S_pannel contact">
+  <p class="S_title right_icon go_link">
+    订单进度
+  </p>
+  <van-steps steps="{{steps}}" active="{{ active }}" />
+</view>
+
+<view style="height:5px; width:100%;background:#f0f0f0"></view>
+
+<view class="S_pannel contact">
+  <p class="S_title right_icon go_link">
+    联系人信息
+  </p>
+  <div class="S_content">
+    <div class="one_cell cell_last">
+      <p class="gard_two">
+        <span class="gard_two_left">姓名</span>
+        <span class="gard_two_right">刘德华</span>
+      </p>
+      <p class="gard_two">
+        <span class="gard_two_left">手机</span>
+        <span class="gard_two_right">1375555555</span>
+      </p>
+      <p class="gard_two">
+        <span class="gard_two_left">收获地址</span>
+        <span class="gard_two_right">广东省深圳市福田区312房</span>
+      </p>
+    </div>
+  </div>
+</view>
+
+<view style="height:5px; width:100%;background:#f0f0f0"></view>
+
+<view class="S_pannel contact">
+  <p class="S_title right_icon go_link">
+    购买商品
+  </p>
+  <van-card num="2" tag="新鲜" origin-price="32.00" price="20.00" desc="酸甜可口" title="苹果" thumb="{{imgUrl}}">
+  </van-card>
+</view>
